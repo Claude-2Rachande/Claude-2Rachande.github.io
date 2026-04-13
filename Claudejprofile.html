@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jean Claude Maniriho | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0f1e;--bg2:#111827;--bg3:#1e293b;
+  --text:#f1f5f9;--muted:#94a3b8;--accent:#38bdf8;
+  --card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+
+nav{position:fixed;top:0;width:100%;background:rgba(10,15,30,0.85);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:999;
+  display:flex;justify-content:center;align-items:center;gap:6px;padding:14px 20px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;
+  padding:6px 14px;border-radius:20px;transition:all 0.2s}
+nav a:hover{color:var(--accent);background:rgba(56,189,248,0.1)}
+
+.theme-btn{position:fixed;top:12px;right:16px;z-index:1000;
+  background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-family:'Inter',sans-serif}
+
+/* HEADER */
+header{min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:120px 20px 80px;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 60% 40%,rgba(56,189,248,0.08) 0%,transparent 60%),
+             radial-gradient(ellipse at 20% 80%,rgba(99,102,241,0.06) 0%,transparent 50%);
+  pointer-events:none}
+
+.avatar-wrap{position:relative;display:inline-block;margin-bottom:28px}
+.avatar{width:140px;height:140px;border-radius:50%;border:3px solid var(--accent);
+  background:linear-gradient(135deg,#1e3a5f,#0e2340);
+  display:flex;align-items:center;justify-content:center;font-size:52px;margin:auto}
+.avatar-ring{position:absolute;inset:-8px;border-radius:50%;
+  border:1px dashed rgba(56,189,248,0.4);animation:spin 20s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+h1.hero-name{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;
+  background:linear-gradient(135deg,#f1f5f9 0%,#38bdf8 50%,#818cf8 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.typed-wrap{font-size:1.2rem;font-weight:500;color:var(--accent);height:2rem;margin-bottom:20px}
+.cursor{animation:blink 0.7s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.philosophy{font-style:italic;color:var(--muted);font-size:0.9rem;margin-bottom:32px}
+
+.cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 28px;border-radius:30px;font-weight:600;font-size:14px;
+  cursor:pointer;text-decoration:none;transition:all 0.25s;border:none;display:inline-block;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--accent);color:#0a0f1e}
+.btn-primary:hover{background:#7dd3fc;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+.btn-outline:hover{background:rgba(56,189,248,0.1);transform:translateY(-2px)}
+
+/* SECTIONS */
+section{padding:80px 20px;max-width:960px;margin:auto}
+.section-label{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px}
+h2.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:40px}
+
+/* ABOUT */
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+@media(max-width:640px){.about-card{grid-template-columns:1fr}}
+.about-text{color:var(--muted);line-height:1.85;font-size:15px}
+.about-text p+p{margin-top:14px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{text-align:center;padding:20px 12px;background:rgba(56,189,248,0.05);
+  border:1px solid rgba(56,189,248,0.1);border-radius:14px}
+.stat-n{font-size:2rem;font-weight:700;color:var(--accent)}
+.stat-l{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:0.5px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px;transition:all 0.3s}
+.skill-card:hover{border-color:rgba(56,189,248,0.5);transform:translateY(-4px);
+  box-shadow:0 8px 32px rgba(56,189,248,0.08)}
+.skill-icon{font-size:28px;margin-bottom:12px}
+.skill-card h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.skill-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.tag{display:inline-block;background:rgba(56,189,248,0.1);color:var(--accent);
+  font-size:11px;padding:3px 10px;border-radius:20px;margin:3px 2px}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:0;top:12px;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:28px;background:var(--card);
+  border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color 0.3s}
+.tl-item:hover{border-color:rgba(56,189,248,0.3)}
+.tl-dot{position:absolute;left:-34px;top:28px;width:12px;height:12px;
+  border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-item h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.tl-org{font-size:13px;color:var(--accent);margin-bottom:8px}
+.tl-item p{font-size:13px;color:var(--muted);line-height:1.7}
+.badge{display:inline-block;background:rgba(52,211,153,0.1);color:#34d399;
+  font-size:11px;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:20px;
+  overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column}
+.proj-card:hover{border-color:rgba(56,189,248,0.5);transform:translateY(-6px);
+  box-shadow:0 16px 48px rgba(56,189,248,0.1)}
+.proj-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+.proj-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(10,15,30,0.7))}
+.proj-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.proj-body h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.proj-body p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:24px;text-align:center;transition:all 0.3s;text-decoration:none;color:var(--text);display:block}
+.contact-card:hover{border-color:rgba(56,189,248,0.5);transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(56,189,248,0.08)}
+.contact-icon{font-size:32px;margin-bottom:12px}
+.contact-card h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.contact-card p{font-size:12px;color:var(--muted);word-break:break-all}
+
+footer{text-align:center;padding:48px 20px;border-top:1px solid var(--border)}
+footer p{color:var(--muted);font-size:13px}
+footer p+p{margin-top:8px;font-size:12px}
+
+/* SCROLL ANIMATION */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* LIGHT MODE */
+body.light{
+  --bg:#f8fafc;--bg2:#f1f5f9;--bg3:#e2e8f0;
+  --text:#0f172a;--muted:#64748b;--accent:#2563eb;
+  --card:#ffffff;--border:rgba(0,0,0,0.08);
+}
+body.light nav{background:rgba(248,250,252,0.9)}
+body.light .avatar{background:linear-gradient(135deg,#bfdbfe,#dbeafe)}
+body.light header::before{
+  background:radial-gradient(ellipse at 60% 40%,rgba(37,99,235,0.06) 0%,transparent 60%),
+             radial-gradient(ellipse at 20% 80%,rgba(99,102,241,0.04) 0%,transparent 50%)}
+body.light h1.hero-name{background:linear-gradient(135deg,#0f172a 0%,#2563eb 50%,#4f46e5 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+body.light .tl-dot{border-color:var(--bg)}
+body.light .proj-img-overlay{background:linear-gradient(to bottom,transparent 40%,rgba(248,250,252,0.5))}
+body.light footer{border-color:rgba(0,0,0,0.08)}
+</style>
+</head>
+<body id="body">
+
+<button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀️ Light</button>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <div>
+    <div class="avatar-wrap">
+      <div class="avatar"> <img src="ogi.png" alt="Claude Photo" width="144" ></div>
+      <div class="avatar-ring"></div>
+    </div>
+    <h1 class="hero-name">Jean Claude Maniriho</h1>
+    <div class="subtitle">MSc Mathematical Sciences · AIMS Graduate · Rwanda 🇷🇼</div>
+    <div class="typed-wrap">I am a <span id="typed"></span><span class="cursor">|</span></div>
+    <p class="philosophy">"A mind sharpened reshapes life and world alike."</p>
+    <div class="cta-group">
+      <a href="#projects" class="btn btn-primary">Explore My Work</a>
+      <a href="cv.pdf" download="Jean_Claude_Maniriho_CV.pdf" class="btn btn-outline">⬇ Download CV</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="section-label">Who I Am</div>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-card">
+    <div class="about-text">
+      <p>Motivated and analytical Data Analyst with strong expertise in Epidemiology, Mathematical Modeling, and Data Science. Passionate about solving real-world problems using data-driven approaches.</p>
+      <p>Based in Rwanda, I combine rigorous mathematical thinking with modern computational tools to extract meaningful insights from complex datasets — from financial markets to public health.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Years Experience</div></div>
+      <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Projects Done</div></div>
+      <div class="stat"><div class="stat-n">MSc</div><div class="stat-l">Epidemiology</div></div>
+      <div class="stat"><div class="stat-n">AIMS</div><div class="stat-l">Graduate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade-in">
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title">Skills & Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <h3>Programming</h3>
+      <p>Statistical analysis, mathematical modeling, and automated data pipelines.</p>
+      <div><span class="tag">Python</span><span class="tag">R</span><span class="tag">MATLAB</span><span class="tag">Java</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <h3>Data Science & AI</h3>
+      <p>Machine learning, predictive modeling, Bayesian analysis, and MCMC methods.</p>
+      <div><span class="tag">Machine Learning</span><span class="tag">MCMC</span><span class="tag">Bayesian</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <h3>Visualization</h3>
+      <p>Data storytelling and interactive dashboards for decision makers.</p>
+      <div><span class="tag">Power BI</span><span class="tag">Matplotlib</span><span class="tag">ggplot2</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🌐</div>
+      <h3>Web Development</h3>
+      <p>Building clean, responsive web applications and portfolio sites.</p>
+      <div><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔬</div>
+      <h3>Epidemiology</h3>
+      <p>Infectious disease modeling, survival analysis, and public health research.</p>
+      <div><span class="tag">SIR/SEIR</span><span class="tag">Survival Analysis</span><span class="tag">R</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📝</div>
+      <h3>Research & Writing</h3>
+      <p>Grant writing, academic research, and statistical consulting.</p>
+      <div><span class="tag">Grant Writing</span><span class="tag">Git</span><span class="tag">GitHub</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="fade-in">
+  <div class="section-label">Academic Background</div>
+  <h2 class="section-title">Education & Qualifications</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <span class="badge">Graduate Degree</span>
+      <h3>MSc Mathematical Sciences (Epidemiology)</h3>
+      <div class="tl-org">African Institute for Mathematical Sciences (AIMS)</div>
+      <p>Focus: Epidemiology & Data Science Modeling. Advanced coursework in mathematical modeling of infectious diseases, Bayesian statistics, and computational methods.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <span class="badge">Undergraduate Degree</span>
+      <h3>BSc Mathematics (Statistics)</h3>
+      <div class="tl-org">University of Rwanda — College of Sciences and Technology (UR-CST)</div>
+      <p>Graduated with distinction in statistical methods. Key projects included Survival Analysis for public health and CPI Analysis for the Rwandan economy.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Professional Certifications/Trainings</h3>
+      <div class="tl-org">Online & Professional Development</div>
+      <div style="margin-top:10px">
+        <span class="tag">Python Programming</span>
+        <span class="tag">AI & Machine Learning</span>
+        <span class="tag">Big Data Analytics</span>
+        <span class="tag">Data Science with R programming </span>
+        <span class="tag">Climate Change, Peace and Security with a focus on integrated climate risk analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-in">
+  <div class="section-label">Work History</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Data Analyst</h3>
+      <div class="tl-org">Rwanda Stock Exchange</div>
+      <p>Financial data analysis, performance reporting, and development of interactive visualizations for market stakeholders. Automated data pipelines reducing manual reporting time significantly.</p>
+      <div style="margin-top:12px">
+        <span class="tag">Financial Analysis</span><span class="tag">Reporting</span><span class="tag">Power BI</span><span class="tag">Python</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <h3>Analytics Consultant</h3>
+      <div class="tl-org">CX Touchpoints Group</div>
+      <p>Customer analytics, dashboard development, and generation of actionable business insights. Designed KPI tracking systems that improved decision-making across multiple client accounts.</p>
+      <div style="margin-top:12px">
+        <span class="tag">Customer Analytics</span><span class="tag">Dashboards</span><span class="tag">Insights</span><span class="tag">R</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0f2c5c,#1a4a8a)">
+        🏥
+        <div class="proj-img-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <h3>Survival Analysis for Maternal Mortality</h3>
+        <p>Risk factor analysis for maternal mortality in Rwanda using Kaplan-Meier estimators and Cox proportional hazards models to identify key predictors and intervention targets.</p>
+        <div class="proj-tags">
+          <span class="tag">R</span>
+          <span class="tag">Survival Analysis</span>
+          <span class="tag">Public Health</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#1a2f1a,#2d5a2d)">
+        📈
+        <div class="proj-img-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <h3>Bacterial Infections in Clinical Trials</h3>
+        <p>Statistical analysis of <i>Haemophilus influenzae</i> prevalence in children with otitis media using Generalized Linear Mixed Models (GLMM), implemented in R to assess infection patterns and associated clinical risk factors.</p>
+        <div class="proj-tags">
+          <span class="tag">R</span>
+          <span class="tag">GLMM</span>
+          <span class="tag">Biostatistics</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#2c1a4a,#4a2d7a)">
+        🧮
+        <div class="proj-img-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <h3>Epidemiological Modeling</h3>
+        <p>Mathematical compartmental models (SIR/SEIR) for simulating infectious disease spread in Rwanda, with parameter estimation using Bayesian MCMC techniques.</p>
+        <div class="proj-tags">
+          <span class="tag">MATLAB</span>
+          <span class="tag">MCMC</span>
+          <span class="tag">Epidemiology</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 (Ongoing) -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0b3d3d,#146b6b)">
+        🌍
+        <div class="proj-img-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <h3>Climate Change and Malaria Risk Mapping (Ongoing)</h3>
+        <p>Assessment of the effects of climate change indicators on the spatial distribution of malaria infections among school children in Kenya. The study applies spatial and statistical modelling techniques in Python to explore environmental and epidemiological relationships.</p>
+        <div class="proj-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Spatial Analysis</span>
+          <span class="tag">Epidemiology</span>
+          <span class="tag">Ongoing</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:jeanclaudemaniriho924@gmail.com">
+      <div class="contact-icon">📧</div>
+      <h4>Email</h4>
+      <p>jeanclaudemaniriho924@gmail.com</p>
+    </a>
+    <a class="contact-card" href="https://wa.me/250781556924" target="_blank" rel="noopener">
+      <div class="contact-icon">💬</div>
+      <h4>WhatsApp</h4>
+      <p>+250 781 556 924</p>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/jean-claude-maniriho-3a308929b" target="_blank" rel="noopener">
+      <div class="contact-icon">💼</div>
+      <h4>LinkedIn</h4>
+      <p>jean-claude-maniriho</p>
+    </a>
+    <a class="contact-card" href="https://github.com/Claude-2Rachande" target="_blank" rel="noopener">
+      <div class="contact-icon">🐙</div>
+      <h4>GitHub</h4>
+      <p>Claude-2Rachande</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Jean Claude Maniriho · Data Analyst · Mathematical Scientist · Web Developer</p>
+  <p>Built with care · Kigali, Rwanda 🇷🇼</p>
+</footer>
+
+<script>
+/* Typing animation */
+const roles = ["Data Analyst","Mathematical Scientist","Web Developer","Epidemiologist","ML Enthusiast"];
+let ri = 0, ci = 0, deleting = false;
+function typeLoop() {
+  const word = roles[ri];
+  document.getElementById('typed').textContent = word.substring(0, ci);
+  if (!deleting) {
+    ci++;
+    if (ci > word.length) { deleting = true; setTimeout(typeLoop, 1600); return; }
+  } else {
+    ci--;
+    if (ci < 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(typeLoop, 400); return; }
+  }
+  setTimeout(typeLoop, deleting ? 55 : 95);
+}
+typeLoop();
+
+/* Theme toggle */
+function toggleTheme() {
+  const light = document.body.classList.toggle('light');
+  document.getElementById('themeBtn').textContent = light ? '🌙 Dark' : '☀️ Light';
+}
+
+/* Scroll fade-in */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
