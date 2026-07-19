@@ -115,6 +115,22 @@ h2.section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-botto
 .proj-body p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;flex:1}
 .proj-tags{display:flex;flex-wrap:wrap;gap:4px}
 
+/* LANGUAGES */
+.lang-grid{display:flex;flex-direction:column;gap:14px}
+.lang-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lang-name{font-size:14px;font-weight:600;min-width:110px}
+.dots{display:flex;gap:6px}
+.dot{width:11px;height:11px;border-radius:50%;background:rgba(148,163,184,0.25)}
+.dot.filled{background:var(--accent)}
+
+/* CERTIFICATIONS / LEADERSHIP */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:18px 20px;transition:border-color 0.3s}
+.cert-card:hover{border-color:rgba(56,189,248,0.4)}
+.cert-card h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.cert-card p{font-size:12px;color:var(--accent)}
+
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .contact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;
@@ -161,6 +177,8 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <a href="#education">Education</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
+  <a href="#initiative">SCEFI</a>
+  <a href="#credentials">Credentials</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -168,16 +186,16 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
 <header>
   <div>
     <div class="avatar-wrap">
-      <div class="avatar"> <img src="ogi.png" alt="Claude Photo" width="144" ></div>
+      <div class="avatar"> <img src="ogi.png" alt="Jean Claude Maniriho" width="144" ></div>
       <div class="avatar-ring"></div>
     </div>
     <h1 class="hero-name">Jean Claude Maniriho</h1>
-    <div class="subtitle">MSc Mathematical Sciences · AIMS Graduate · Rwanda 🇷🇼</div>
+    <div class="subtitle">Master’s in Mathematical Sciences (Epidemiology), AIMS Rwanda · Climate & Public Health Researcher · Full-Stack Developer </div>
     <div class="typed-wrap">I am a <span id="typed"></span><span class="cursor">|</span></div>
     <p class="philosophy">"A mind sharpened reshapes life and world alike."</p>
     <div class="cta-group">
       <a href="#projects" class="btn btn-primary">Explore My Work</a>
-      <a href="cv.pdf" download="Jean_Claude_Maniriho_CV.pdf" class="btn btn-outline">⬇ Download CV</a>
+      <a href="Jean_MAN_CV.pdf" download="Jean_Claude_Maniriho_CV.pdf" class="btn btn-outline">⬇ Download CV</a>
     </div>
   </div>
 </header>
@@ -188,14 +206,15 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <h2 class="section-title">About Me</h2>
   <div class="about-card">
     <div class="about-text">
-      <p>Motivated and analytical Data Analyst with strong expertise in Epidemiology, Mathematical Modeling, and Data Science. Passionate about solving real-world problems using data-driven approaches.</p>
-      <p>Based in Rwanda, I combine rigorous mathematical thinking with modern computational tools to extract meaningful insights from complex datasets — from financial markets to public health.</p>
+      <p>I'm a Mathematical Epidemiologist and Data Scientist specializing in statistical modeling, machine learning, and public health research. My work sits at the intersection of climate-health analytics, Bayesian spatio-temporal modeling (R-INLA, SPDE, GAMM), and full-stack software development turning complex environmental and epidemiological data into evidence for real decisions.</p>
+      <p>At KEMRI in Nairobi, I lead data engineering and spatial analysis on a malaria risk study spanning 47 Kenyan counties and 62,000+ surveillance records. I'm also the founder and CEO of SCEFI (Safe Childhood, Educated Futures Initiative), an NGO advancing child protection and education access in underserved rural districts of Rwanda.</p>
+      <p>I hold an MSc in Mathematical Sciences (Epidemiology) from AIMS Rwanda as a Mastercard Foundation Scholar, and a B.Sc. (Hons) in Mathematics and Statistics from the University of Rwanda. I combine rigorous mathematical thinking with modern computational tools to deliver insight from public health surveillance to financial markets.</p>
     </div>
     <div class="stats-grid">
       <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Years Experience</div></div>
-      <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Projects Done</div></div>
-      <div class="stat"><div class="stat-n">MSc</div><div class="stat-l">Epidemiology</div></div>
-      <div class="stat"><div class="stat-n">AIMS</div><div class="stat-l">Graduate</div></div>
+      <div class="stat"><div class="stat-n">7+</div><div class="stat-l">Projects Delivered</div></div>
+      <div class="stat"><div class="stat-n">MSc</div><div class="stat-l">Epidemiology, AIMS</div></div>
+      <div class="stat"><div class="stat-n">SCEFI</div><div class="stat-l">Founder & CEO</div></div>
     </div>
   </div>
 </section>
@@ -205,42 +224,97 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <div class="section-label">What I Do</div>
   <h2 class="section-title">Skills & Expertise</h2>
   <div class="skills-grid">
+    
+    <!-- Data Science & AI -->
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <h3>Data Science &amp; AI</h3>
+      <p>Machine learning, predictive modeling, Bayesian analysis, and MCMC methods.</p>
+      <div>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">MCMC</span>
+        <span class="tag">Bayesian</span>
+      </div>
+    </div>
+
+    <!-- Programming -->
     <div class="skill-card">
       <div class="skill-icon">🐍</div>
       <h3>Programming</h3>
       <p>Statistical analysis, mathematical modeling, and automated data pipelines.</p>
-      <div><span class="tag">Python</span><span class="tag">R</span><span class="tag">MATLAB</span><span class="tag">Java</span></div>
+      <div>
+        <span class="tag">Python</span>
+        <span class="tag">R</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Java</span>
+        <span class="tag">MATLAB</span>
+      </div>
     </div>
+
+    <!-- Spatial & Bayesian Modeling -->
     <div class="skill-card">
-      <div class="skill-icon">🤖</div>
-      <h3>Data Science & AI</h3>
-      <p>Machine learning, predictive modeling, Bayesian analysis, and MCMC methods.</p>
-      <div><span class="tag">Machine Learning</span><span class="tag">MCMC</span><span class="tag">Bayesian</span></div>
+      <div class="skill-icon">🛰️</div>
+      <h3>Spatial &amp; Bayesian Modeling</h3>
+      <p>Geospatial data pipelines and Bayesian spatio-temporal modeling for disease mapping.</p>
+      <div>
+        <span class="tag">R-INLA</span>
+        <span class="tag">SPDE / BYM2</span>
+        <span class="tag">GAMM</span>
+        <span class="tag">MCMC</span>
+      </div>
     </div>
+
+    <!-- Visualization -->
     <div class="skill-card">
       <div class="skill-icon">📊</div>
       <h3>Visualization</h3>
       <p>Data storytelling and interactive dashboards for decision makers.</p>
-      <div><span class="tag">Power BI</span><span class="tag">Matplotlib</span><span class="tag">ggplot2</span></div>
+      <div>
+        <span class="tag">Power BI</span>
+        <span class="tag">SPSS</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">ggplot2</span>
+      </div>
     </div>
+
+    <!-- Full-Stack Development -->
     <div class="skill-card">
       <div class="skill-icon">🌐</div>
-      <h3>Web Development</h3>
-      <p>Building clean, responsive web applications and portfolio sites.</p>
-      <div><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      <h3>Full-Stack Development</h3>
+      <p>Building clean, responsive web applications and relational database systems.</p>
+      <div>
+        <span class="tag">Django</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
     </div>
+
+    <!-- Epidemiology -->
     <div class="skill-card">
       <div class="skill-icon">🔬</div>
       <h3>Epidemiology</h3>
       <p>Infectious disease modeling, survival analysis, and public health research.</p>
-      <div><span class="tag">SIR/SEIR</span><span class="tag">Survival Analysis</span><span class="tag">R</span></div>
+      <div>
+        <span class="tag">SIR/SEIR</span>
+        <span class="tag">Survival Analysis</span>
+        <span class="tag">R</span>
+      </div>
     </div>
+
+    <!-- Tools & Environment -->
     <div class="skill-card">
-      <div class="skill-icon">📝</div>
-      <h3>Research & Writing</h3>
-      <p>Grant writing, academic research, and statistical consulting.</p>
-      <div><span class="tag">Grant Writing</span><span class="tag">Git</span><span class="tag">GitHub</span></div>
+      <div class="skill-icon">⚙️</div>
+      <h3>Tools &amp; Environment</h3>
+      <p>Version control, systems, and reproducible research workflows.</p>
+      <div>
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">Git Bash</span>
+        <span class="tag">Linux</span>
+        <span class="tag">LaTeX</span>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -251,15 +325,15 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <span class="badge">Graduate Degree</span>
+      <span class="badge">Mastercard Foundation Scholar</span>
       <h3>MSc Mathematical Sciences (Epidemiology)</h3>
-      <div class="tl-org">African Institute for Mathematical Sciences (AIMS)</div>
-      <p>Focus: Epidemiology & Data Science Modeling. Advanced coursework in mathematical modeling of infectious diseases, Bayesian statistics, and computational methods.</p>
+      <div class="tl-org">African Institute for Mathematical Sciences (AIMS Rwanda)</div>
+      <p>Thesis research under Dr. Collins Okoyo on climate and environmental drivers of malaria risk among school children across 47 Kenyan counties, using a merged geospatial-epidemiological dataset (MODIS LST/NDVI, SRTM elevation, ERA5-Land, GIS distance-to-water) and Bayesian spatio-temporal models (GAMM, INLA-SPDE).</p>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <span class="badge">Undergraduate Degree</span>
-      <h3>BSc Mathematics (Statistics)</h3>
+      <span class="badge">Graduated 2025</span>
+      <h3>B.Sc. (Hons) Mathematics and Statistics</h3>
       <div class="tl-org">University of Rwanda — College of Sciences and Technology (UR-CST)</div>
       <p>Graduated with distinction in statistical methods. Key projects included Survival Analysis for public health and CPI Analysis for the Rwandan economy.</p>
     </div>
@@ -271,7 +345,7 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
         <span class="tag">Python Programming</span>
         <span class="tag">AI & Machine Learning</span>
         <span class="tag">Big Data Analytics</span>
-        <span class="tag">Data Science with R programming </span>
+        <span class="tag">Data Science with R programming</span>
         <span class="tag">Climate Change, Peace and Security with a focus on integrated climate risk analysis</span>
       </div>
     </div>
@@ -285,20 +359,52 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <h3>Data Analyst</h3>
-      <div class="tl-org">Rwanda Stock Exchange</div>
-      <p>Financial data analysis, performance reporting, and development of interactive visualizations for market stakeholders. Automated data pipelines reducing manual reporting time significantly.</p>
+      <span class="badge">2026 – Present · Nairobi</span>
+      <h3>Research Assistant (Intern)</h3>
+      <div class="tl-org">Kenya Medical Research Institute (KEMRI)</div>
+      <p>Lead data engineering and spatial analysis for a malaria risk assessment study: managing, cleaning, and analyzing health, environmental, and climate datasets across 47 Kenyan counties (62,000+ records), and supporting spatial and epidemiological analyses and research documentation.</p>
       <div style="margin-top:12px">
-        <span class="tag">Financial Analysis</span><span class="tag">Reporting</span><span class="tag">Power BI</span><span class="tag">Python</span>
+        <span class="tag">Geospatial Analysis</span><span class="tag">R / Python</span><span class="tag">Malaria Epidemiology</span>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
-      <h3>Analytics Consultant</h3>
-      <div class="tl-org">CX Touchpoints Group</div>
-      <p>Customer analytics, dashboard development, and generation of actionable business insights. Designed KPI tracking systems that improved decision-making across multiple client accounts.</p>
+      <span class="badge">2025 – Present · Kigali</span>
+      <h3>Founder & CEO</h3>
+      <div class="tl-org">SCEFI — Safe Childhood, Educated Futures Initiative</div>
+      <p>Founded a non-profit development initiative dedicated to child education, protection, and community development in underserved Rwandan communities. Developed grant proposals and resource mobilisation briefs for international donors, designed a trilingual (English/Kinyarwanda/Kiswahili) website with Stripe and MTN Mobile Money integration, and built a District Need Index (DNI) methodology to prioritise underserved communities.</p>
       <div style="margin-top:12px">
-        <span class="tag">Customer Analytics</span><span class="tag">Dashboards</span><span class="tag">Insights</span><span class="tag">R</span>
+        <span class="tag">Nonprofit Leadership</span><span class="tag">Child Protection</span><span class="tag">Program Design</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <span class="badge">Mar – Jun 2025 · Kigali</span>
+      <h3>Data Analytics Intern</h3>
+      <div class="tl-org">CX Touchpoints Group</div>
+      <p>Collected, cleaned, and analyzed customer experience data to identify trends and service improvements. Developed dashboards and reports using R and Power BI.</p>
+      <div style="margin-top:12px">
+        <span class="tag">Customer Analytics</span><span class="tag">Dashboards</span><span class="tag">R</span><span class="tag">Power BI</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <span class="badge">Dec 2024 – Feb 2025 · Kigali</span>
+      <h3>Data Analyst Intern</h3>
+      <div class="tl-org">Rwanda Stock Exchange</div>
+      <p>Analyzed stock market and financial datasets; produced analytical reports and supported real-time market monitoring.</p>
+      <div style="margin-top:12px">
+        <span class="tag">Financial Analysis</span><span class="tag">Reporting</span><span class="tag">Python</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <span class="badge">2023 – Present · Volunteer</span>
+      <h3>Community Mentor</h3>
+      <div class="tl-org">Rural Education Support Initiative</div>
+      <p>Mentor students in Mathematics and Physics, promoting STEAM education and exam preparation across rural Rwandan communities.</p>
+      <div style="margin-top:12px">
+        <span class="tag">Mentorship</span><span class="tag">STEAM Education</span>
       </div>
     </div>
   </div>
@@ -310,6 +416,40 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <h2 class="section-title">Projects</h2>
 
   <div class="projects-grid">
+
+    <!-- Project: Thesis (flagship) -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#0b3d3d,#146b6b)">
+        🌍
+        <div class="proj-img-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <h3>Climate Change and Malaria Risk Assessment in Kenyan Schools</h3>
+        <p>Built a full geospatial covariate pipeline merging MODIS LST/NDVI, SRTM elevation, ERA5-Land climate data, and GIS distance-to-water onto a 62,630+ record school surveillance dataset spanning 47 counties. Applied GAMM and INLA-SPDE Bayesian spatio-temporal models to identify environmental drivers of malaria risk and inform public health interventions.</p>
+        <div class="proj-tags">
+          <span class="tag">Python</span>
+          <span class="tag">R-INLA</span>
+          <span class="tag">Spatial Epidemiology</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project: Full-stack -->
+    <div class="proj-card">
+      <div class="proj-img" style="background:linear-gradient(135deg,#3d2b0b,#6b4c14)">
+        💻
+        <div class="proj-img-overlay"></div>
+      </div>
+      <div class="proj-body">
+        <h3>AIMS Workspace Management System</h3>
+        <p>Designed a student information management system as a Django web application with a relational database for student records, cohorts, programs, and enrollments applying SQL, database design, and data modeling to ensure data integrity and efficient retrieval.</p>
+        <div class="proj-tags">
+          <span class="tag">Django</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Full-Stack</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Project 1 -->
     <div class="proj-card">
@@ -335,8 +475,8 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
         <div class="proj-img-overlay"></div>
       </div>
       <div class="proj-body">
-        <h3>Bacterial Infections in Clinical Trials</h3>
-        <p>Statistical analysis of <i>Haemophilus influenzae</i> prevalence in children with otitis media using Generalized Linear Mixed Models (GLMM), implemented in R to assess infection patterns and associated clinical risk factors.</p>
+        <h3>Modelling Haemophilus Influenzae in Otitis Media</h3>
+        <p>Analyzed longitudinal clinical trial data (50 children, 220 repeated binary measurements) to evaluate antibiotic efficacy against <i>Haemophilus influenzae</i> in pediatric otitis media, applying a Generalized Linear Mixed Model (Bernoulli family, logit link, random intercept per subject) in R to account for within-subject correlation.</p>
         <div class="proj-tags">
           <span class="tag">R</span>
           <span class="tag">GLMM</span>
@@ -362,44 +502,56 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
       </div>
     </div>
 
-    <!-- Project 4 (Ongoing) -->
+    <!-- Project 4: Enhanced SMC (NEW) -->
     <div class="proj-card">
-      <div class="proj-img" style="background:linear-gradient(135deg,#0b3d3d,#146b6b)">
-        🌍
+      <div class="proj-img" style="background:linear-gradient(135deg,#1a3a2a,#2d6a4f)">
+        📊
         <div class="proj-img-overlay"></div>
       </div>
       <div class="proj-body">
-        <h3>Climate Change and Malaria Risk Mapping (Ongoing)</h3>
-        <p>Assessment of the effects of climate change indicators on the spatial distribution of malaria infections among school children in Kenya. The study applies spatial and statistical modelling techniques in Python to explore environmental and epidemiological relationships.</p>
+        <h3>Impact of Enhanced Seasonal Malaria Chemoprevention on Haemoglobin Trajectories: A Longitudinal RCT Analysis</h3>
+        <p>Boosts child haemoglobin by 1.23 g/dL. Analyzed longitudinal RCT data (300 children, 1,200 observations) evaluating Enhanced Seasonal Malaria Chemoprevention with iron/nutritional supplementation against the Standard protocol over 6 months. Applied Linear Mixed Models (random intercept + slope) in R, achieving significant treatment×month interaction (β=0.205 g/dL/month, p&lt;0.001) with ICC=0.704 justifying the multilevel approach.</p>
         <div class="proj-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Spatial Analysis</span>
-          <span class="tag">Epidemiology</span>
-          <span class="tag">Ongoing</span>
+          <span class="tag">R</span>
+          <span class="tag">LMM</span>
+          <span class="tag">Longitudinal</span>
+          <span class="tag">RCT</span>
         </div>
       </div>
     </div>
 
   </div>
 </section>
-
+<!-- SCEI -->
+<section id="initiative" class="fade-in">
+  <div class="section-label">Beyond Research</div>
+  <h2 class="section-title">SCEFI — Safe Childhood, Educated Futures Initiative</h2>
+  <div class="about-card">
+    <div class="about-text">
+      <p>SCEFI is an NGO I founded to advance child protection and education access in underserved rural districts of Rwanda. It runs on a trilingual digital platform (English, Kiswahili, Kinyarwanda) with integrated donation support, and is guided by a District Need Index (DNI) that helps prioritize where resources will have the most impact.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-n">3</div><div class="stat-l">Languages Supported</div></div>
+      <div class="stat"><div class="stat-n">DNI</div><div class="stat-l">Need-Based Targeting</div></div>
+    </div>
+  </div>
+</section>
 <!-- CONTACT -->
 <section id="contact" class="fade-in">
   <div class="section-label">Get In Touch</div>
   <h2 class="section-title">Contact Me</h2>
   <div class="contact-grid">
-    <a class="contact-card" href="mailto:jeanclaudemaniriho924@gmail.com">
-      <div class="contact-icon">📧</div>
+    <a class="contact-card" href="mailto:jeanclaude.maniriho@aims.ac.rw">
+      <div class="contact-icon">✉️</div>
       <h4>Email</h4>
-      <p>jeanclaudemaniriho924@gmail.com</p>
-    </a>
-    <a class="contact-card" href="https://wa.me/250781556924" target="_blank" rel="noopener">
-      <div class="contact-icon">💬</div>
+      <p>jeanclaude.maniriho@aims.ac.rw</p>
+      <a class="contact-card" href="https://wa.me/250781556924" target="_blank" rel="noopener">
+      <div class="contact-icon" style="color:#25D366;">💬</div>
       <h4>WhatsApp</h4>
       <p>+250 781 556 924</p>
     </a>
     <a class="contact-card" href="https://www.linkedin.com/in/jean-claude-maniriho-3a308929b" target="_blank" rel="noopener">
-      <div class="contact-icon">💼</div>
+     <div class="contact-icon" style="color:#0A66C2;">💼</div>
       <h4>LinkedIn</h4>
       <p>jean-claude-maniriho</p>
     </a>
@@ -412,13 +564,13 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
 </section>
 
 <footer>
-  <p>© 2026 Jean Claude Maniriho · Data Analyst · Mathematical Scientist · Web Developer</p>
+  <p>© 2026 Jean Claude Maniriho · Epidemiologist · Mathematical Scientist · Founder, SCEFI</p>
   <p>Built with care · Kigali, Rwanda 🇷🇼</p>
 </footer>
 
 <script>
 /* Typing animation */
-const roles = ["Data Analyst","Mathematical Scientist","Web Developer","Epidemiologist","ML Enthusiast"];
+const roles = ["Epidemiologist","Mathematical Scientist","Spatial Data Scientist","Founder, SCEFI","ML Enthusiast"];
 let ri = 0, ci = 0, deleting = false;
 function typeLoop() {
   const word = roles[ri];
