@@ -36,7 +36,8 @@ header::before{content:'';position:absolute;inset:0;
 .avatar-wrap{position:relative;display:inline-block;margin-bottom:28px}
 .avatar{width:140px;height:140px;border-radius:50%;border:3px solid var(--accent);
   background:linear-gradient(135deg,#1e3a5f,#0e2340);
-  display:flex;align-items:center;justify-content:center;font-size:52px;margin:auto}
+  display:flex;align-items:center;justify-content:center;font-size:52px;margin:auto;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .avatar-ring{position:absolute;inset:-8px;border-radius:50%;
   border:1px dashed rgba(56,189,248,0.4);animation:spin 20s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -186,16 +187,16 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
 <header>
   <div>
     <div class="avatar-wrap">
-      <div class="avatar"> <img src="ogi.png" alt="Jean Claude Maniriho" width="144" ></div>
+      <div class="avatar"><img src="ogi.png" alt="Jean Claude Maniriho"></div>
       <div class="avatar-ring"></div>
     </div>
     <h1 class="hero-name">Jean Claude Maniriho</h1>
-    <div class="subtitle">Master’s in Mathematical Sciences (Epidemiology), AIMS Rwanda · Climate & Public Health Researcher · Full-Stack Developer </div>
+    <div class="subtitle">Master’s in Mathematical Sciences (Epidemiology), AIMS Rwanda · Climate &amp; Public Health Researcher · Full-Stack Developer</div>
     <div class="typed-wrap">I am a <span id="typed"></span><span class="cursor">|</span></div>
     <p class="philosophy">"A mind sharpened reshapes life and world alike."</p>
     <div class="cta-group">
       <a href="#projects" class="btn btn-primary">Explore My Work</a>
-      <a href="Jean_MAN_CV.pdf" download="Jean_Claude_Maniriho_CV.pdf" class="btn btn-outline">⬇ Download CV</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
     </div>
   </div>
 </header>
@@ -206,15 +207,15 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
   <h2 class="section-title">About Me</h2>
   <div class="about-card">
     <div class="about-text">
-      <p>I'm a Mathematical Epidemiologist and Data Scientist specializing in statistical modeling, machine learning, and public health research. My work sits at the intersection of climate-health analytics, Bayesian spatio-temporal modeling (R-INLA, SPDE, GAMM), and full-stack software development turning complex environmental and epidemiological data into evidence for real decisions.</p>
+      <p>I'm a Mathematical Epidemiologist and Data Scientist specializing in statistical modeling, machine learning, and public health research. My work sits at the intersection of climate-health analytics, Bayesian spatio-temporal modeling (R-INLA, SPDE, GAMM), and full-stack software development — turning complex environmental and epidemiological data into evidence for real decisions.</p>
       <p>At KEMRI in Nairobi, I lead data engineering and spatial analysis on a malaria risk study spanning 47 Kenyan counties and 62,000+ surveillance records. I'm also the founder and CEO of SCEFI (Safe Childhood, Educated Futures Initiative), an NGO advancing child protection and education access in underserved rural districts of Rwanda.</p>
-      <p>I hold an MSc in Mathematical Sciences (Epidemiology) from AIMS Rwanda as a Mastercard Foundation Scholar, and a B.Sc. (Hons) in Mathematics and Statistics from the University of Rwanda. I combine rigorous mathematical thinking with modern computational tools to deliver insight from public health surveillance to financial markets.</p>
+      <p>I hold an MSc in Mathematical Sciences (Epidemiology) from AIMS Rwanda as a Mastercard Foundation Scholar, and a B.Sc. (Hons) in Mathematics and Statistics from the University of Rwanda. I combine rigorous mathematical thinking with modern computational tools to deliver insight — from public health surveillance to financial markets.</p>
     </div>
     <div class="stats-grid">
       <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Years Experience</div></div>
       <div class="stat"><div class="stat-n">7+</div><div class="stat-l">Projects Delivered</div></div>
       <div class="stat"><div class="stat-n">MSc</div><div class="stat-l">Epidemiology, AIMS</div></div>
-      <div class="stat"><div class="stat-n">SCEFI</div><div class="stat-l">Founder & CEO</div></div>
+      <div class="stat"><div class="stat-n">SCEFI</div><div class="stat-l">Founder &amp; CEO</div></div>
     </div>
   </div>
 </section>
@@ -222,9 +223,9 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
 <!-- SKILLS -->
 <section id="skills" class="fade-in">
   <div class="section-label">What I Do</div>
-  <h2 class="section-title">Skills & Expertise</h2>
+  <h2 class="section-title">Skills &amp; Expertise</h2>
   <div class="skills-grid">
-    
+
     <!-- Data Science & AI -->
     <div class="skill-card">
       <div class="skill-icon">🤖</div>
@@ -321,7 +322,7 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
 <!-- EDUCATION -->
 <section id="education" class="fade-in">
   <div class="section-label">Academic Background</div>
-  <h2 class="section-title">Education & Qualifications</h2>
+  <h2 class="section-title">Education &amp; Qualifications</h2>
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-dot"></div>
@@ -340,10 +341,10 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
     <div class="tl-item">
       <div class="tl-dot"></div>
       <h3>Professional Certifications/Trainings</h3>
-      <div class="tl-org">Online & Professional Development</div>
+      <div class="tl-org">Online &amp; Professional Development</div>
       <div style="margin-top:10px">
         <span class="tag">Python Programming</span>
-        <span class="tag">AI & Machine Learning</span>
+        <span class="tag">AI &amp; Machine Learning</span>
         <span class="tag">Big Data Analytics</span>
         <span class="tag">Data Science with R programming</span>
         <span class="tag">Climate Change, Peace and Security with a focus on integrated climate risk analysis</span>
@@ -370,7 +371,7 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
     <div class="tl-item">
       <div class="tl-dot"></div>
       <span class="badge">2025 – Present · Kigali</span>
-      <h3>Founder & CEO</h3>
+      <h3>Founder &amp; CEO</h3>
       <div class="tl-org">SCEFI — Safe Childhood, Educated Futures Initiative</div>
       <p>Founded a non-profit development initiative dedicated to child education, protection, and community development in underserved Rwandan communities. Developed grant proposals and resource mobilisation briefs for international donors, designed a trilingual (English/Kinyarwanda/Kiswahili) website with Stripe and MTN Mobile Money integration, and built a District Need Index (DNI) methodology to prioritise underserved communities.</p>
       <div style="margin-top:12px">
@@ -442,7 +443,7 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
       </div>
       <div class="proj-body">
         <h3>AIMS Workspace Management System</h3>
-        <p>Designed a student information management system as a Django web application with a relational database for student records, cohorts, programs, and enrollments applying SQL, database design, and data modeling to ensure data integrity and efficient retrieval.</p>
+        <p>Designed a student information management system as a Django web application with a relational database for student records, cohorts, programs, and enrollments — applying SQL, database design, and data modeling to ensure data integrity and efficient retrieval.</p>
         <div class="proj-tags">
           <span class="tag">Django</span>
           <span class="tag">SQL</span>
@@ -502,7 +503,7 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
       </div>
     </div>
 
-    <!-- Project 4: Enhanced SMC (NEW) -->
+    <!-- Project 4: Enhanced SMC -->
     <div class="proj-card">
       <div class="proj-img" style="background:linear-gradient(135deg,#1a3a2a,#2d6a4f)">
         📊
@@ -522,7 +523,8 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
 
   </div>
 </section>
-<!-- SCEI -->
+
+<!-- SCEFI -->
 <section id="initiative" class="fade-in">
   <div class="section-label">Beyond Research</div>
   <h2 class="section-title">SCEFI — Safe Childhood, Educated Futures Initiative</h2>
@@ -536,6 +538,7 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
     </div>
   </div>
 </section>
+
 <!-- CONTACT -->
 <section id="contact" class="fade-in">
   <div class="section-label">Get In Touch</div>
@@ -545,16 +548,20 @@ body.light footer{border-color:rgba(0,0,0,0.08)}
       <div class="contact-icon">✉️</div>
       <h4>Email</h4>
       <p>jeanclaude.maniriho@aims.ac.rw</p>
-      <a class="contact-card" href="https://wa.me/250781556924" target="_blank" rel="noopener">
+    </a>
+
+    <a class="contact-card" href="https://wa.me/250781556924" target="_blank" rel="noopener">
       <div class="contact-icon" style="color:#25D366;">💬</div>
       <h4>WhatsApp</h4>
       <p>+250 781 556 924</p>
     </a>
+
     <a class="contact-card" href="https://www.linkedin.com/in/jean-claude-maniriho-3a308929b" target="_blank" rel="noopener">
-     <div class="contact-icon" style="color:#0A66C2;">💼</div>
+      <div class="contact-icon" style="color:#0A66C2;">💼</div>
       <h4>LinkedIn</h4>
       <p>jean-claude-maniriho</p>
     </a>
+
     <a class="contact-card" href="https://github.com/Claude-2Rachande" target="_blank" rel="noopener">
       <div class="contact-icon">🐙</div>
       <h4>GitHub</h4>
